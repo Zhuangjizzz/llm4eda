@@ -1,0 +1,17 @@
+你需要设计一个无源RC带通滤波器，满足如下指标
+- 中心频率：{center_frequency}
+- 带宽：{bandwidth}
+为了简化设计，你应该使用RC低通滤波器和RC高通滤波器级联的方式来实现。
+RC低通滤波器的网表如下
+Vin in 0 AC 1
+R in out [insert value of R]
+C out 0 [insert value of C]
+.END
+RC高通滤波器的网表如下
+Vin in 0 AC 1
+C in out [insert value of C]
+R out 0 [insert value of R]
+.END
+请特别注意，低通滤波器的电容接输出节点和地之间、高通滤波器的电容接输入节点和输出节点之间。
+首先你可以假设所有的电阻R为1k，然后根据中心频率和带宽以此计算出上下截止频率对应的电容值，比如C_low=1/(2*pi*R*下截止频率)。
+最后输出带通滤波器的网表，不要把低通和高通的网表分别输出,输出节点名称为out，低通和高通间的级联节点可以用数字表示。

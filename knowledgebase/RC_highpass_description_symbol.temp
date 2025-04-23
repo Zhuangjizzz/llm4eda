@@ -1,0 +1,17 @@
+1. Circuit Structure:
+A high-pass RC filter circuit is detailed in the netlist, primarily composed of a resistor ($R$) and a capacitor ($C$).
+The capacitor $C$ is linked on one end to the voltage source ('in' in the netlist) and at the other end to the resistor $R$ at a junction point ('out' in the netlist).
+The resistor $R$ shares one terminal with $C$ at the junction point (node 'out'), while its other end is grounded (node '0'), providing a return path for the circuit.
+The point where $C$ and $R$ join (node 'out') is considered as the output node. Here, the output signal is the voltage across $R$, representing the filtered signal.
+
+2. Circuit Role:
+The primary purpose of this circuit is to allow high-frequency signals to pass through while suppressing the propagation of low-frequency signals.
+
+3. Transfer Function:
+The transfer function of this RC high-pass filter circuit can be denoted as $H(s) = s/(\omega_c + s)$, where $s = j \omega$ with $j$ denoting the imaginary unit and $\omega_c$ denoting the cut-off frequency.
+
+4. Performance Metric(s):
+The cut-off frequency is a crucial performance metric for this circuit. 
+The computed cut-off frequency is $\omega_c = 1/(RC)$, or $f_c = 1/(2*\pi*RC)$.
+The cutoff frequency corresponds to the frequency where the output signal amplitude is approximately 0.707 of the input signal amplitude.
+Consequently, the filter starts to propagate high-frequency signals beginning at the frequency $f_c$.

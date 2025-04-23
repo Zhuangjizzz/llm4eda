@@ -1,0 +1,22 @@
+.title rc bandpass filter
+* file name rcbandpass.cir
+
+R1 in 1 1k
+C1 1 0 1.326u
+R2 out 0 1k
+C2 1 out 1.989u
+V1 in 0 dc 0 ac 1
+
+
+.control
+ac dec 30 0.01 1000k
+settype decibel out
+plot vdb(out) xlimit 0.01 100k ylabel 'smalkl signal gain'
+settype phase out
+plot cph(out) xlimit 0.01 100k ylabel 'phase (in rad)'
+let outd = 180/PI*cph(out)
+settype phase outd
+plot outd xlimit 0.01 100k ylabel 'phase'
+.endc
+
+.end

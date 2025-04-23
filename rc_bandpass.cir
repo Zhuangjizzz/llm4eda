@@ -1,0 +1,20 @@
+.title rc bandpass filter
+Vin in 0 AC 1
+C1 in 1 1.326u
+R1 1 0 1k
+R2 1 out 1k
+C2 out 0 1.989u
+
+.control
+ac dec 30 0.01 1000k
+settype decibel out
+plot vdb(out) xlimit 0.01 100k ylabel 'smalkl signal gain'
+settype phase out
+plot cph(out) xlimit 0.01 100k ylabel 'phase (in rad)'
+let outd = 180/PI*cph(out)
+settype phase outd
+plot outd xlimit 0.01 100k ylabel 'phase'
+.endc
+
+.end
+
